@@ -1,0 +1,12 @@
+n="\n" :scan="" :chk=1 itr=0 IF :rlst==0 then GOTO 1 END
+:scan+=:mat+n+:vol+n
+itr+0=1 :idx=itr if itr<:rlst THEN GOTO 2 elese GOTO 4 END
+:sense=0
+delay+=1 IF delay > 6 THEN GOTO 6 ELSE GOTO 5 END
+delay=0 if :sense==0 THEN :reset01 GOTO 5 ELSE GOTO 1 END
+
+// Setup for the the Ore Scanner : 
+// Active = sense Material = mat Scan = chk
+// ScanResults = rlst Index = idx Volume = idx
+// Name a Button Sense
+// Original Author Xenocow
