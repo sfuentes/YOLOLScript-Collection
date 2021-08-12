@@ -1,0 +1,13 @@
+i=0 lasers=4 step=2 cycle=1
+:MLF1=0 :MLF2=0 :MLR1=0 :MLR2=0
+if :MiningLaserOn == 1 then GOTO10 else goto 3 end
+if :MLF1==0 then :MLF1=1 :MLF2=0 :MLR1=0 :MLR2=0 END
+if :MLF2==0 then :MLF1=1 :MLF2=1 :MLR1=0 :MLR2=0 END
+if :MLR1==0 then :MLF1=0 :MLF2=1 :MLR1=1 :MLR2=0 END
+if :MLR2==0 then :MLF1=0 :MLF2=0 :MLR1=1 :MLR2=1 END
+:MLF1=0 :MLF2=0 :MLR1=0 :MLR2=1
+:MLF1=0 :MLF2=0 :MLR1=0 :MLR2=0
+if i<lasers then i++ goto 4  else i=0 GOTO 2 END
+
+//add spacing lines if you want to prolong the pulse of each Laser
+//Created by Mazok Nor
