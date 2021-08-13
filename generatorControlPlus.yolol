@@ -1,0 +1,17 @@
+IF :Stop==1 OR :50Eps==1 THEN s=:Stop e=:50Eps GOTO5 ELSE GOTO2 END
+:GeneratorUnitRateLimit=100
+:FuelChamberUnitRateLimit=(100-:StoredBatteryPower/100)+1 GOTO1
+
+if s==1 THEN GOTO8 END IF e==1 THEN GOTO6 END GOTO1
+:GeneratorUnitRateLimit=50 :GeneratorUnitRate=50 f=100
+IF :50Eps==0 THEN GOTO1 ELSE GOTO10 END 
+:GeneratorUnitRateLimit=1 :GeneratorUnitRate=0 f=1
+IF :Stop==0 THEN GOTO1 ELSE GOTO10 END
+:FuelChamberUnitRateLimit=f GOTO4
+
+// Changes your FuelRate according to your BatteryState -> no over Production
+// Interface for 2 Buttons
+// :Stop for a Full Stop, no energy production 
+// Dont Change the limit to 0, thats risking you to run dry
+// :50Eps for 50% Production Limit
+// Created by MazokNor
