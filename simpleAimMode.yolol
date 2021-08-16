@@ -1,0 +1,7 @@
+if :aim==1 THEN GOTO3 ELSE GOTO2 END
+:AimModeMin=-100 :AimModeMax=100 GOTO1
+:AimModeMin=-10 :AimModeMax=10 GOTO1
+
+// SetUp all Yaw, Pitch Roll Controls with AimModeMin / Max
+// Create a Button Called Aim
+// Created by MazokNor
