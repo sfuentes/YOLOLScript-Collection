@@ -1,0 +1,14 @@
+If :Laser==1 then :Smooth=1 goto 1 end :Smooth=5 goto 1
+
+
+:GenRate=:HalfEPS+(10000-:Battery)/80 goto 1
+
+:TotalPropellant=:Propellant1+:Propellant2
+:TotalRods=:Rod1+:Rod2+:Rod3+:Rod4+:Rod5 goto1
+
+If :Scanner==1 then goto 2 end goto 1
+V="" S="" :I=0 :LastScan="" :Start=1 goto 4
+:LastScan=:LastScan+S+"\n"+V+"\n" :I++
+if :R==0 then :LastScan="Nothing detected!" :Scanner=0 goto 1 end
+if :R>:I then S=:Mats-" Ore"-" Crystals" V=:Vol+" kv" goto 3 end
+:Scanner=0 :Reset=1 goto 1
