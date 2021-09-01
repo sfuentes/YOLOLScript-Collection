@@ -1,0 +1,4 @@
+IF (:aim==0) AND (:AimModeMax!=100) THEN GOTO3 ELSE GOTO2 END
+if :aim==1 THEN GOTO4 END GOTO 1
+:AimModeMin=-100 :AimModeMax=100 GOTO1
+:AimModeMin=-15 :AimModeMax=15 GOTO1
