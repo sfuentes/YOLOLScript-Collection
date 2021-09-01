@@ -1,0 +1,11 @@
+sp=17 Kp=0.3 Ki=0 Kd=0.5 le=0 int=0 tu=:Turtle :ListenAngle=180
+if :AutoMining==1 then :Cruise=10 :Turtle=5 goto4 else goto1 end
+RFDist=:AutoMiningDist
+e=RFDist-sp de=e-le int=int+e o=Kp*e+(Ki*int)+(Kd*de) le=e
+if RFDist>999 or e<3 then :AutoMining=0 goto8 end
+if o>0 then :FCUForward=o else :FCUForward=0 end
+if o<0 then :FCUBackward=-o else :FCUBackward=0 end
+if :AutoMining==1 then goto3 else GOTO10 end
+:FCUForward=0 :FCUBackward=0 :Turtle=tu goto1
+
+// Originates from Reddit 
