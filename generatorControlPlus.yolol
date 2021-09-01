@@ -1,11 +1,11 @@
 IF :Stop==1 OR :50Eps==1 THEN s=:Stop e=:50Eps GOTO5 ELSE GOTO2 END
 :GeneratorUnitRateLimit=100
-:FuelChamberUnitRateLimit=(100-:StoredBatteryPower/100)+1 GOTO1
+:FuelChamberUnitRateLimit=100-:StoredBatteryPower/100 GOTO1
 
 if s==1 THEN GOTO8 END IF e==1 THEN GOTO6 END GOTO1
 :GeneratorUnitRateLimit=50 :GeneratorUnitRate=50 f=100
 IF :50Eps==0 THEN GOTO1 ELSE GOTO10 END 
-:GeneratorUnitRateLimit=1 :GeneratorUnitRate=0 f=1
+:GeneratorUnitRateLimit=0.01 :GeneratorUnitRate=0.01 f=0.01
 IF :Stop==0 THEN GOTO1 ELSE GOTO10 END
 :FuelChamberUnitRateLimit=f GOTO4
 
