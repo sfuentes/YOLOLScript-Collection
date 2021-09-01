@@ -1,12 +1,12 @@
-n="\n" :scan="" :chk=1 itr=0 IF :rlst==0 then GOTO 1 END
-:scan+=:mat+n+:vol+n
-itr+0=1 :idx=itr if itr<:rlst THEN GOTO 2 elese GOTO 4 END
-:sense=0
-delay+=1 IF delay > 6 THEN GOTO 6 ELSE GOTO 5 END
-delay=0 if :sense==0 THEN :reset01 GOTO 5 ELSE GOTO 1 END
+IF :SO==0 THEN :Scan="\nNO RESULTS" goto 1 ELSE :Id=0 END :SRe=1 i=0
+n="\n" IF :SR>0 THEN o="" i=0 goto 3 ELSE :SS=1 goto 1 END
+IF i<3 THEN i+=1 ELSE i=0 goto 6 END
+IF :Id<:SR THEN goto 5 ELSE goto 3 END
+IF :Vk>0 THEN o+=n+:Ma+n+(:Vk/1728)+" stacks" :Id+=1 goto 3 END 
+:Scan=o IF :Id<:SR THEN o="" goto 3 END goto 1
 
 // Setup for the the Ore Scanner : 
 // Active = sense Material = mat Scan = chk
 // ScanResults = rlst Index = idx Volume = idx
 // Name a Button Sense
-// Original Author Xenocow
+// Original Reddit User 
