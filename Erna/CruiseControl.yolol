@@ -1,0 +1,7 @@
+:RFA=0 :RFB=0 :RFC=0 :RFD=0 i=0 ctime=10 d=500 w=0
+if :SafeTravel==1 AND :FcuForward>1 THEN GOTO3 ELSE GOTO2 END
+:RFA=1 :RFB=1 :RFC=1 :RFD=1 :RangeFinderSearchLength=d
+if :rfad<d OR :rfbd<d OR :rfcd<d OR :rfdd<d THEN GOTO5 ELSE GOTO6 END
+w=1
+if w==1 THEN :Cruise=0 :FcuForward=0 ELSE GOTO1 END
+if i<ctime THEN i++ GOTO1 ELSE GOTO5 END
