@@ -3,6 +3,8 @@ bw=25 bc=10 :POWERWARNING=0 :POWERCRITICAL=0 msf=300000 b=60 bp=10000
 :GasMeter=(:GasNetworkStoredResource/:GasNetworkMaxResource)*100
 epf=:EPF1+:EPF2+:EPF3+:EPF4 :AuxFuelMeter=(epf/(msf*4))*100
 :BatteryMeter=((:StoredBatteryPower*b)/(b*bp))*100
+:FuelBurnRate=:FuelChamberUnitRate
+:AuxPowerOut=:EPFRate
 
 IF :StoredRawFuel < 5 THEN :FuelWarning=1 END
 IF :BatteryMeter < bc THEN GOTO13 END
