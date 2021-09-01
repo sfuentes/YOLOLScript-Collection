@@ -1,0 +1,5 @@
+IF :MiningControl!=0 AND mc!=:MiningControl THEN GOTO3 ELSE GOTO1 END
+mc=:MiningControl
+:LeftMiningRot1=:MiningControl :LeftMiningRot2=(0 - :MiningControl)
+:RightMiningRot1=(0-:MiningControl) :RightMiningRot2=:MiningControl
+GOTO 1
